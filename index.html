@@ -4,8 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Theme changer</title>
+    <style>
+        .icon{
+            height: 50px;
+            padding: 10px;
+            border-radius: 50%;
+            margin: 50px 20px;
+            cursor: pointer;
+        }
+        .border{
+            border: 2px solid grey;
+        }
+
+    </style>
 </head>
 <body>
-    
+    <div>
+        <img src="sun.png" class="icon border" id="icon-light" onclick="lightMode()">
+        <img src="moon.png" class="icon" id="icon-dark" onclick="darkMode()">
+    </div>
+
+    <script>
+        function lightMode(){
+            const iconLight=document.getElementById('icon-light');
+            iconLight.classList.add('border');
+
+            const iconDark=document.getElementById('icon-dark');
+            iconDark.classList.remove('border');
+        }
+
+        function darkMode(){
+            const iconDark=document.getElementById('icon-dark');
+            iconDark.classList.add('border');
+
+            const iconLight=document.getElementById('icon-light');
+            iconLight.classList.remove('border');
+        }
+    </script>
 </body>
 </html>
