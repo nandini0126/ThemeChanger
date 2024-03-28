@@ -6,23 +6,54 @@
     <title>Theme changer</title>
     <style>
         .icon{
-            height: 50px;
+            height: 40px;
             padding: 10px;
             border-radius: 50%;
-            margin: 50px 20px;
+            margin: 20px;
             cursor: pointer;
+            background-color: white;
         }
         .border{
             border: 2px solid grey;
         }
+        .bird-img{
+            height: 300px;
+            margin-right: 80px;
+        }
+        .container{
+            width: 70%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px auto;
+            padding: 30px;
+            font-size: 20px;
+            border-radius: 20px;
+        }
+        .theme-dark{
+            background-color: black;
+            color: white;
+
+        }
+        .theme-light{
+            background-color: white;
+        }
 
     </style>
 </head>
-<body>
+<body id="body">
     <div>
         <img src="sun.png" class="icon border" id="icon-light" onclick="lightMode()">
         <img src="moon.png" class="icon" id="icon-dark" onclick="darkMode()">
     </div>
+
+    <div class="container" id="container">
+        <img src="humming-bird.png" class="bird-img">
+        <p class="text">I chirp happily among the trees, chatting with my bird friends and enjoying the warmth of the sun on my feathers. The trees are like big, leafy umbrellas, keeping us cozy and safe. The flowers bloom with colors that make me smile, and the breeze whispers secrets in my ear. Nature is like a big, cuddly blanket, wrapping us
+             all up in its love. Let's all be friends with the trees, flowers, and birds, and make the world a happy place!</p>
+    </div>
+
+
 
     <script>
         function lightMode(){
@@ -31,6 +62,9 @@
 
             const iconDark=document.getElementById('icon-dark');
             iconDark.classList.remove('border');
+
+            const themeColor=document.getElementById('body');
+            themeColor.className= "theme-light"
         }
 
         function darkMode(){
@@ -39,6 +73,9 @@
 
             const iconLight=document.getElementById('icon-light');
             iconLight.classList.remove('border');
+
+            const themeColor=document.getElementById('body');
+            themeColor.className= "theme-dark"
         }
     </script>
 </body>
